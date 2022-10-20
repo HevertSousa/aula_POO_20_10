@@ -1,6 +1,6 @@
 package aula_poo_20_10;
 
-public class Funcionario{
+public class Funcionario implements AdicionalDependente, ValorPlanoSaude{
 		private String matricula, nome;
 		private double salario, horaExtra;
 		
@@ -33,6 +33,21 @@ public class Funcionario{
 			double totalSalario = this.getSalario()+(this.horaExtra*10);
 			
 			return totalSalario;
+		}
+		@Override
+		public void adDep() {
+			System.out.println("O Funcionario Possui dependentes");
+			
+		}
+		@Override
+		public void extraPlanoSaude() {
+			System.out.println("O Funcionario Possui plano de saúde");
+			
+		}
+		@Override
+		public void extraPlanoOdonto() {
+			System.out.println("O Funcionario Possui plano odontológico");
+			
 		}
                     
 	}
